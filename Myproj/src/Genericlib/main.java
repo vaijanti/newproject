@@ -1,9 +1,13 @@
 package Genericlib;
 
+import static org.testng.Assert.assertEquals;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.Assert;
+import org.testng.log4testng.Logger;
 
 public class main {
 
@@ -15,6 +19,7 @@ public class main {
 		boolean el =dr.findElement(By.id("cb_tab_Car")).isSelected();
 		
 		System.out.println(el);
+		 Assert.assertEquals( 12,13 );
 
 
 	}

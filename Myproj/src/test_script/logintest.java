@@ -25,7 +25,9 @@ public class logintest {
 	public void login() throws IOException{
 	WebDriver driver=new FirefoxDriver();
 	driver.manage().window().maximize();
+	Logger log=  Logger.getLogger("logintest");
 	driver.get("http://opensource.demo.orangehrmlive.com/index.php/auth/login");
+	log.info("url pass");
 	driver.findElement(By.name("txtUsername")).sendKeys("Admin");
 	driver.findElement(By.name("txtPassword")).sendKeys("admin");
 	driver.findElement(By.name("Submit")).click();
@@ -34,15 +36,14 @@ public class logintest {
 	    Date d1= new Date();
 	    String det= d1.toString();
 	    String  title= "OrangeHRM";
-	    
-	    Logger log=  Logger.getLogger("logintest");
+	   
 	    EventFiringWebDriver edr= new EventFiringWebDriver(driver);
 	    File scr= edr.getScreenshotAs(OutputType.FILE);
 	    File Dest= new File("D:\\cd.png");
 	    FileUtils.copyFile(scr, Dest);
 	    Assert.assertEquals(title, "OrangeHRM");
 	    
-	    log.info(title);
+	    
 	    
 	    		 
 	}
